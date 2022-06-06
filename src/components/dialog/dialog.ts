@@ -26,7 +26,7 @@ export class InputDialog
       ".dialog__submit"
     )! as HTMLElement;
     submitBtn.onclick = () => {
-      this.closeListener && this.closeListener();
+      this.submitListener && this.submitListener();
     };
   }
 
@@ -38,7 +38,7 @@ export class InputDialog
   }
 
   addChild(child: Component): void {
-    const body = this.element.querySelector(".dialog__body")! as HTMLElement;
+    const body = this.element.querySelector("#dialog__body")! as HTMLElement;
     child.attachTo(body);
   }
   addChilds(childs: Component[]): void {
