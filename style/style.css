@@ -10,16 +10,20 @@
   --component-bg-gradient: radial-gradient(circle, #646464e6 0%, #363636e6 100%);
   --smokywhite: #dddbd8;
   --black: #000000;
-  --white: #fff;
   --translucent-black: #00000099;
 }
 
 li {
   list-style: none;
+  padding-left: 0;
 }
 
 p {
   color: var(--smokywhite);
+}
+
+label {
+  color: var(--text-accent-color);
 }
 
 * {
@@ -29,20 +33,13 @@ p {
 
 body {
   background: url('../assets/background.png') center/cover no-repeat;
-  overflow: hidden;
-  height: 100vh;
-  margin: 0;
+  font-family: Roboto, Oxygen, sans-serif;
   display: flex;
   justify-content: center;
-  margin: auto;
-}
-
-ul {
-  padding-left: 0;
-}
-
-button {
-  cursor: pointer;
+  height: 100vh;
+  overflow: hidden;
+  font-size: 1.25rem;
+  margin: 0;
 }
 
 .app {
@@ -54,43 +51,58 @@ button {
 }
 
 .banner {
-  display: flex;
-  background-color: var(--bg-main-color);
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
+  background: var(--bg-main-color);
+  border-bottom: 1px solid var(--bg-accent-color);
+  text-align: center;
 }
 
 .banner__title {
-  color: var(--accent-color);
   margin: 20px;
+  color: var(--accent-color);
 }
 
 .control-panel {
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
 }
 
 .create-button {
   margin: 0.1em 0.2em;
   text-align: center;
+  user-select: none;
+  padding: 1em 3em;
+  text-transform: uppercase;
   font-weight: 600;
   font-size: 0.8rem;
-  padding: 1em 3em;
-  user-select: none;
+  color: white;
   background-color: var(--accent-color);
-  color: var(--white);
+  border-color: var(--accent-color);
+  border-radius: 2px;
 }
 
 .document {
   height: 100%;
   background-color: var(--document-bg-color);
-  overflow: auto;
+  /* Firefox */
+  scrollbar-width: 6px;
+  scrollbar-color: var(--bg-accent-color);
+  scrollbar-face-color: var(--accent-color);
+}
+
+.document::-webkit-scrollbar {
+  /* Safari and Chrome */
+  background-color: var(--bg-accent-color);
+  width: 6px;
+}
+
+.document::-webkit-scrollbar-thumb {
+  /* Safari and Chrome */
+  background-color: var(--accent-color);
 }
 
 .footer {
-  background-color: var(--bg-main-color);
+  background: var(--bg-main-color);
   border-top: 1px solid var(--border-color);
   text-align: center;
 }
